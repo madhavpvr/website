@@ -6,8 +6,8 @@ pipeline {
 		sh 'sudo apt update -y'
                 sh 'sudo apt install docker.io -y'
                 sh 'sudo apt install git -y'
-		sh 'docker build -t madhav .'
-		sh 'docker run -dit --name webpage -p 82:80 madhav'
+		sh 'sudo docker build -t madhav .'
+		sh 'sudo docker run -dit --name webpage -p 82:80 madhav'
 		
             }
         }
