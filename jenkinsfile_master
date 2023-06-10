@@ -1,0 +1,14 @@
+pipeline {
+    agent {label "deploy__server"}
+    stages {
+        stage("This is sample build from git  using jenkins pipeline") {
+            steps {
+		sh 'apt update -y'
+                sh 'apt install docker.io -y'
+                sh 'apt install git -y'
+		sh 'docker build -t madhav .'
+		sh 'docker run -dit --name webpage -p 82:80 madhav'
+            }
+        }
+    }
+}
