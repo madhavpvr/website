@@ -1,5 +1,5 @@
 pipeline {
-    agent {label "deploy__server"}
+    agent {label "deploy_server"}
     stages {
         stage("This is sample build from git  using jenkins pipeline") {
             steps {
