@@ -7,7 +7,7 @@ RUN apt install apache2 -y
 RUN apt install apache2-utils -y
 
 COPY ./index.html /var/www/html/
-COPY ./images /var/www/html
+COPY ./images/ /var/www/html
 
 #CMD ["apache2ctl", "-D", "FOREGROUND"]
 
