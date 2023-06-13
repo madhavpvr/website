@@ -1,0 +1,18 @@
+pipeline {
+    agent {label "build_server"}
+    stages {
+        stage("This is sample build from git  using jenkins pipeline in develop branch ") {
+            steps {
+                sh 'sudo apt update -y'
+                sh 'sudo apt install docker.io -y'
+                sh 'sudo apt install git -y'
+                sh 'sudo docker build -t madhav .'
+                sh 'sudo docker stop webpage'
+                sh 'sudo docker rm webpage'
+                sh 'sudo docker run -dit --name webpage  madhav'
+
+            }
+        }
+    }
+}
+
